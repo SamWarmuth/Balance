@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Balance": {
+            "applicationId": "TrVlQmK2HLoh1befrsXA6sW1htmGYGic0qg8vRBn", 
+            "masterKey": "gZor0EnpczEkDFMkiNYMZMNJG4sIdEffz89HmbIC"
+        }, 
+        "_default": {
+            "link": "Balance"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.2"
+    }
+}
