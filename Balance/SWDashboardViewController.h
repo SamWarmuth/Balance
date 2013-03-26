@@ -13,8 +13,12 @@
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel, *balanceLabel, *changeLabel;
-@property (nonatomic, strong) IBOutlet BButton *cashOutButton;
+@property (nonatomic, strong) IBOutlet BButton *buyChipsButton, *cashOutButton, *sellChipsButton;
 
 - (IBAction)buyChipsTapped:(id)sender;
+- (IBAction)sellChipsTapped:(id)sender;
+- (IBAction)cashOutTapped:(id)sender;
+
+
 
 @end

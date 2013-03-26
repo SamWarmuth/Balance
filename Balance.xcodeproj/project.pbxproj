@@ -41,6 +41,7 @@
 		889C16DE1701011C0054F58E /* SWLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16DD1701011B0054F58E /* SWLabel.m */; };
 		889C16E317010F1F0054F58E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 889C16E017010F1F0054F58E /* SVProgressHUD.bundle */; };
 		889C16E417010F1F0054F58E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16E217010F1F0054F58E /* SVProgressHUD.m */; };
+		889C16ED17016B300054F58E /* SWPriceEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16EC17016B300054F58E /* SWPriceEntryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,8 @@
 		889C16E017010F1F0054F58E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		889C16E117010F1F0054F58E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		889C16E217010F1F0054F58E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		889C16EB17016B300054F58E /* SWPriceEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPriceEntryViewController.h; sourceTree = "<group>"; };
+		889C16EC17016B300054F58E /* SWPriceEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWPriceEntryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				889C16D4170100C50054F58E /* SWLabelPriceCell.m */,
 				889C16DC1701011B0054F58E /* SWLabel.h */,
 				889C16DD1701011B0054F58E /* SWLabel.m */,
+				889C16EB17016B300054F58E /* SWPriceEntryViewController.h */,
+				889C16EC17016B300054F58E /* SWPriceEntryViewController.m */,
 				889C16BE1700FA140054F58E /* External */,
 				889C16781700F6300054F58E /* Supporting Files */,
 			);
@@ -309,6 +314,7 @@
 				889C16D5170100C50054F58E /* SWLabelPriceCell.m in Sources */,
 				889C16DE1701011C0054F58E /* SWLabel.m in Sources */,
 				889C16E417010F1F0054F58E /* SVProgressHUD.m in Sources */,
+				889C16ED17016B300054F58E /* SWPriceEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
