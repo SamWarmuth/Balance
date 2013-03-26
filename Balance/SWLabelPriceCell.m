@@ -25,11 +25,15 @@
     self.leftLabel = [[SWLabel alloc] init];
     self.leftLabel.textAlignment = NSTextAlignmentLeft;
     self.leftLabel.backgroundColor = [UIColor clearColor];
+    self.leftLabel.minimumScaleFactor = 0.5;
+    self.rightLabel.adjustsFontSizeToFitWidth = YES;
     [self.contentView addSubview:self.leftLabel];
     
     self.rightLabel = [[SWLabel alloc] init];
     self.rightLabel.textAlignment = NSTextAlignmentRight;
     self.rightLabel.backgroundColor = [UIColor clearColor];
+    self.rightLabel.minimumScaleFactor = 0.5;
+    self.rightLabel.adjustsFontSizeToFitWidth = YES;
     [self.contentView addSubview:self.rightLabel];
     [self updateFrames];
     self.selectionStyle = UITableViewCellSelectionStyleGray;

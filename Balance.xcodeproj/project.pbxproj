@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88515522170252D200C91823 /* buyChipsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88515521170252D200C91823 /* buyChipsIcon@2x.png */; };
+		88515524170252D500C91823 /* buyChipsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 88515523170252D500C91823 /* buyChipsIcon.png */; };
+		886221F31702458C00267112 /* SWBalancesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886221F21702458C00267112 /* SWBalancesViewController.m */; };
+		886221FA170250B100267112 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 886221F9170250B100267112 /* Default.png */; };
+		886221FC170250B400267112 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 886221FB170250B400267112 /* Default@2x.png */; };
+		886221FE170250B800267112 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 886221FD170250B800267112 /* Default-568h@2x.png */; };
 		889C16721700F6300054F58E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889C16711700F6300054F58E /* UIKit.framework */; };
 		889C16741700F6300054F58E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889C16731700F6300054F58E /* Foundation.framework */; };
 		889C16761700F6300054F58E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889C16751700F6300054F58E /* CoreGraphics.framework */; };
@@ -36,23 +42,31 @@
 		889C16C51700FA210054F58E /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16C31700FA210054F58E /* BButton.m */; };
 		889C16C91700FB4F0054F58E /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16C81700FB4F0054F58E /* SWLoginViewController.m */; };
 		889C16CC1700FE340054F58E /* SWDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16CB1700FE340054F58E /* SWDashboardViewController.m */; };
-		889C16CF1700FF320054F58E /* SWStandingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16CE1700FF320054F58E /* SWStandingsViewController.m */; };
 		889C16D5170100C50054F58E /* SWLabelPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16D4170100C50054F58E /* SWLabelPriceCell.m */; };
 		889C16DE1701011C0054F58E /* SWLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16DD1701011B0054F58E /* SWLabel.m */; };
 		889C16E317010F1F0054F58E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 889C16E017010F1F0054F58E /* SVProgressHUD.bundle */; };
 		889C16E417010F1F0054F58E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16E217010F1F0054F58E /* SVProgressHUD.m */; };
 		889C16ED17016B300054F58E /* SWPriceEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16EC17016B300054F58E /* SWPriceEntryViewController.m */; };
+		889C16F3170222E70054F58E /* SWTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16F2170222E70054F58E /* SWTransactionsViewController.m */; };
+		889C16F71702273A0054F58E /* SWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C16F6170227390054F58E /* SWSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		889C166E1700F6300054F58E /* Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88515521170252D200C91823 /* buyChipsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buyChipsIcon@2x.png"; sourceTree = "<group>"; };
+		88515523170252D500C91823 /* buyChipsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyChipsIcon.png; sourceTree = "<group>"; };
+		886221F11702458C00267112 /* SWBalancesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBalancesViewController.h; sourceTree = "<group>"; };
+		886221F21702458C00267112 /* SWBalancesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBalancesViewController.m; sourceTree = "<group>"; };
+		886221F9170250B100267112 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		886221FB170250B400267112 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		886221FD170250B800267112 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		889C166E1700F6300054F58E /* balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = balance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889C16711700F6300054F58E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		889C16731700F6300054F58E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		889C16751700F6300054F58E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		889C16791700F6300054F58E /* Balance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Balance-Info.plist"; sourceTree = "<group>"; };
+		889C16791700F6300054F58E /* balance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "balance-Info.plist"; sourceTree = "<group>"; };
 		889C167B1700F6300054F58E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		889C167D1700F6300054F58E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		889C167F1700F6300054F58E /* Balance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Balance-Prefix.pch"; sourceTree = "<group>"; };
+		889C167F1700F6300054F58E /* balance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "balance-Prefix.pch"; sourceTree = "<group>"; };
 		889C16801700F6300054F58E /* SWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWAppDelegate.h; sourceTree = "<group>"; };
 		889C16811700F6300054F58E /* SWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWAppDelegate.m; sourceTree = "<group>"; };
 		889C16831700F6300054F58E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -83,8 +97,6 @@
 		889C16C81700FB4F0054F58E /* SWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLoginViewController.m; sourceTree = "<group>"; };
 		889C16CA1700FE340054F58E /* SWDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDashboardViewController.h; sourceTree = "<group>"; };
 		889C16CB1700FE340054F58E /* SWDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDashboardViewController.m; sourceTree = "<group>"; };
-		889C16CD1700FF320054F58E /* SWStandingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStandingsViewController.h; sourceTree = "<group>"; };
-		889C16CE1700FF320054F58E /* SWStandingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStandingsViewController.m; sourceTree = "<group>"; };
 		889C16D3170100C50054F58E /* SWLabelPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLabelPriceCell.h; sourceTree = "<group>"; };
 		889C16D4170100C50054F58E /* SWLabelPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLabelPriceCell.m; sourceTree = "<group>"; };
 		889C16DC1701011B0054F58E /* SWLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLabel.h; sourceTree = "<group>"; };
@@ -94,6 +106,11 @@
 		889C16E217010F1F0054F58E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		889C16EB17016B300054F58E /* SWPriceEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPriceEntryViewController.h; sourceTree = "<group>"; };
 		889C16EC17016B300054F58E /* SWPriceEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWPriceEntryViewController.m; sourceTree = "<group>"; };
+		889C16F1170222E70054F58E /* SWTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTransactionsViewController.h; sourceTree = "<group>"; };
+		889C16F2170222E70054F58E /* SWTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTransactionsViewController.m; sourceTree = "<group>"; };
+		889C16F41702263D0054F58E /* SWConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWConstants.h; sourceTree = "<group>"; };
+		889C16F5170227390054F58E /* SWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsViewController.h; sourceTree = "<group>"; };
+		889C16F6170227390054F58E /* SWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +144,11 @@
 		889C16651700F6300054F58E = {
 			isa = PBXGroup;
 			children = (
+				88515523170252D500C91823 /* buyChipsIcon.png */,
+				88515521170252D200C91823 /* buyChipsIcon@2x.png */,
+				886221FD170250B800267112 /* Default-568h@2x.png */,
+				886221FB170250B400267112 /* Default@2x.png */,
+				886221F9170250B100267112 /* Default.png */,
 				889C16771700F6300054F58E /* Balance */,
 				889C16701700F6300054F58E /* Frameworks */,
 				889C166F1700F6300054F58E /* Products */,
@@ -136,7 +158,7 @@
 		889C166F1700F6300054F58E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				889C166E1700F6300054F58E /* Balance.app */,
+				889C166E1700F6300054F58E /* balance.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,12 +194,17 @@
 				889C16801700F6300054F58E /* SWAppDelegate.h */,
 				889C16811700F6300054F58E /* SWAppDelegate.m */,
 				889C16891700F6300054F58E /* MainStoryboard.storyboard */,
+				889C16F41702263D0054F58E /* SWConstants.h */,
 				889C16C71700FB4F0054F58E /* SWLoginViewController.h */,
 				889C16C81700FB4F0054F58E /* SWLoginViewController.m */,
 				889C16CA1700FE340054F58E /* SWDashboardViewController.h */,
 				889C16CB1700FE340054F58E /* SWDashboardViewController.m */,
-				889C16CD1700FF320054F58E /* SWStandingsViewController.h */,
-				889C16CE1700FF320054F58E /* SWStandingsViewController.m */,
+				889C16F1170222E70054F58E /* SWTransactionsViewController.h */,
+				889C16F2170222E70054F58E /* SWTransactionsViewController.m */,
+				886221F11702458C00267112 /* SWBalancesViewController.h */,
+				886221F21702458C00267112 /* SWBalancesViewController.m */,
+				889C16F5170227390054F58E /* SWSettingsViewController.h */,
+				889C16F6170227390054F58E /* SWSettingsViewController.m */,
 				889C16D3170100C50054F58E /* SWLabelPriceCell.h */,
 				889C16D4170100C50054F58E /* SWLabelPriceCell.m */,
 				889C16DC1701011B0054F58E /* SWLabel.h */,
@@ -193,10 +220,10 @@
 		889C16781700F6300054F58E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				889C16791700F6300054F58E /* Balance-Info.plist */,
+				889C16791700F6300054F58E /* balance-Info.plist */,
 				889C167A1700F6300054F58E /* InfoPlist.strings */,
 				889C167D1700F6300054F58E /* main.m */,
-				889C167F1700F6300054F58E /* Balance-Prefix.pch */,
+				889C167F1700F6300054F58E /* balance-Prefix.pch */,
 				889C16831700F6300054F58E /* Default.png */,
 				889C16851700F6300054F58E /* Default@2x.png */,
 				889C16871700F6300054F58E /* Default-568h@2x.png */,
@@ -238,9 +265,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		889C166D1700F6300054F58E /* Balance */ = {
+		889C166D1700F6300054F58E /* balance */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 889C16911700F6300054F58E /* Build configuration list for PBXNativeTarget "Balance" */;
+			buildConfigurationList = 889C16911700F6300054F58E /* Build configuration list for PBXNativeTarget "balance" */;
 			buildPhases = (
 				889C166A1700F6300054F58E /* Sources */,
 				889C166B1700F6300054F58E /* Frameworks */,
@@ -250,9 +277,9 @@
 			);
 			dependencies = (
 			);
-			name = Balance;
+			name = balance;
 			productName = Balance;
-			productReference = 889C166E1700F6300054F58E /* Balance.app */;
+			productReference = 889C166E1700F6300054F58E /* balance.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -265,7 +292,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Sam Warmuth";
 			};
-			buildConfigurationList = 889C16691700F6300054F58E /* Build configuration list for PBXProject "Balance" */;
+			buildConfigurationList = 889C16691700F6300054F58E /* Build configuration list for PBXProject "balance" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -277,7 +304,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				889C166D1700F6300054F58E /* Balance */,
+				889C166D1700F6300054F58E /* balance */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +321,11 @@
 				889C168B1700F6300054F58E /* MainStoryboard.storyboard in Resources */,
 				889C16B41700F8290054F58E /* FacebookSDKResources.bundle in Resources */,
 				889C16E317010F1F0054F58E /* SVProgressHUD.bundle in Resources */,
+				886221FA170250B100267112 /* Default.png in Resources */,
+				886221FC170250B400267112 /* Default@2x.png in Resources */,
+				886221FE170250B800267112 /* Default-568h@2x.png in Resources */,
+				88515522170252D200C91823 /* buyChipsIcon@2x.png in Resources */,
+				88515524170252D500C91823 /* buyChipsIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,11 +342,13 @@
 				889C16C51700FA210054F58E /* BButton.m in Sources */,
 				889C16C91700FB4F0054F58E /* SWLoginViewController.m in Sources */,
 				889C16CC1700FE340054F58E /* SWDashboardViewController.m in Sources */,
-				889C16CF1700FF320054F58E /* SWStandingsViewController.m in Sources */,
 				889C16D5170100C50054F58E /* SWLabelPriceCell.m in Sources */,
 				889C16DE1701011C0054F58E /* SWLabel.m in Sources */,
 				889C16E417010F1F0054F58E /* SVProgressHUD.m in Sources */,
 				889C16ED17016B300054F58E /* SWPriceEntryViewController.m in Sources */,
+				889C16F3170222E70054F58E /* SWTransactionsViewController.m in Sources */,
+				889C16F71702273A0054F58E /* SWSettingsViewController.m in Sources */,
+				886221F31702458C00267112 /* SWBalancesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,13 +439,13 @@
 					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Balance/Balance-Prefix.pch";
-				INFOPLIST_FILE = "Balance/Balance-Info.plist";
+				GCC_PREFIX_HEADER = "Balance/balance-Prefix.pch";
+				INFOPLIST_FILE = "Balance/balance-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = balance;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -419,19 +453,23 @@
 		889C16931700F6300054F58E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Balance/Balance-Prefix.pch";
-				INFOPLIST_FILE = "Balance/Balance-Info.plist";
+				GCC_PREFIX_HEADER = "Balance/balance-Prefix.pch";
+				INFOPLIST_FILE = "Balance/balance-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = balance;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -439,7 +477,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		889C16691700F6300054F58E /* Build configuration list for PBXProject "Balance" */ = {
+		889C16691700F6300054F58E /* Build configuration list for PBXProject "balance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				889C168F1700F6300054F58E /* Debug */,
@@ -448,13 +486,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		889C16911700F6300054F58E /* Build configuration list for PBXNativeTarget "Balance" */ = {
+		889C16911700F6300054F58E /* Build configuration list for PBXNativeTarget "balance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				889C16921700F6300054F58E /* Debug */,
 				889C16931700F6300054F58E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

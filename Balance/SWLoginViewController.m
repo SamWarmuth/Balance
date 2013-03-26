@@ -58,7 +58,10 @@
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Uh oh. An error occurred: %@", error]];
                 } else {
                     NSDictionary *userData = (NSDictionary *)result;
+                    [user setObject:userData[@"first_name"] forKey:@"firstName"];
+                    [user setObject:userData[@"last_name"] forKey:@"lastName"];
                     [user setObject:userData[@"name"] forKey:@"name"];
+
                     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         [SVProgressHUD dismiss];
                         [self performSegueWithIdentifier:@"SWLoginToDashboard" sender:self];

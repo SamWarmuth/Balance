@@ -20,10 +20,7 @@
 
 @end
 
-#define RED [UIColor colorWithRed:0.805 green:0.026 blue:0.000 alpha:1.000]
-#define GREEN [UIColor colorWithRed:0.000 green:0.542 blue:0.040 alpha:1.000]
-#define GRAY [UIColor colorWithRed:0.518 green:0.518 blue:0.518 alpha:1]
-#define BLUE [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f]
+
 @implementation SWDashboardViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,10 +47,10 @@
 {
     [super viewWillAppear:animated];
     self.nameLabel.text = [[PFUser currentUser] objectForKey:@"name"];
-    if (!self.lastLoad || [self.lastLoad timeIntervalSinceNow] * -1 > 5*60) [self updateBalance];
+    if (!self.lastLoad || [self.lastLoad timeIntervalSinceNow] * -1 > 60*60) [self updateBalanceAndTransactions];
 }
 
-- (void)updateBalance
+- (void)updateBalanceAndTransactions
 {
     [SVProgressHUD show];
     self.lastLoad = [NSDate date];
@@ -67,27 +64,7 @@
             if (![result isKindOfClass:[NSNumber class]]) return [SVProgressHUD showErrorWithStatus:@"Error: Unexpected Response"];
             self.balance = (NSNumber *)result;
             
-            NSString *currencyString = [NSNumberFormatter localizedStringFromNumber:self.balance numberStyle:NSNumberFormatterCurrencyStyle];
-            self.balanceLabel.text = [NSString stringWithFormat:@"%@", currencyString];
-            
-            if ([self.balance floatValue] < 0) {
-                self.balanceLabel.textColor = RED;
-                self.cashOutButton.color = RED;
-                [self.cashOutButton setTitle:@"PAY DEBT" forState:UIControlStateNormal];
-                self.cashOutButton.enabled = YES;
-                
-            }  else if ([self.balance floatValue] > 0) {
-                self.balanceLabel.textColor = [UIColor blackColor];
-                self.cashOutButton.color = GREEN;
-                [self.cashOutButton setTitle:@"CASH OUT" forState:UIControlStateNormal];
-                self.cashOutButton.enabled = YES;
-
-            } else {
-                self.balanceLabel.textColor = [UIColor blackColor];
-                self.cashOutButton.color = GRAY;
-                [self.cashOutButton setTitle:@"EVEN" forState:UIControlStateNormal];
-                self.cashOutButton.enabled = NO;
-            }
+            [self updateUI];
         }
     }];
     
@@ -103,6 +80,35 @@
             [self.tableView reloadData];
         }
     }];
+}
+
+- (void)updateUI
+{
+    NSString *currencyString = [NSNumberFormatter localizedStringFromNumber:@([self.balance integerValue] / 100.0) numberStyle:NSNumberFormatterCurrencyStyle];
+    self.balanceLabel.text = [NSString stringWithFormat:@"%@", currencyString];
+    self.cashOutButton.alpha = 1.0;
+    if ([self.balance integerValue] < 0) {
+        self.balanceLabel.textColor = RED;
+        self.cashOutButton.color = DARKGRAY;
+        [self.cashOutButton setTitle:@"PAY DEBT" forState:UIControlStateNormal];
+        self.cashOutButton.enabled = YES;
+        
+    }  else if ([self.balance integerValue] > 0) {
+
+        self.balanceLabel.textColor = [UIColor blackColor];
+        self.cashOutButton.color = DARKGRAY;
+        [self.cashOutButton setTitle:@"CASH OUT" forState:UIControlStateNormal];
+        self.cashOutButton.enabled = YES;
+        
+    } else {
+        self.balanceLabel.textColor = [UIColor blackColor];
+        self.cashOutButton.color = [UIColor darkGrayColor];
+        [self.cashOutButton setTitle:@"EVEN" forState:UIControlStateNormal];
+        self.cashOutButton.enabled = NO;
+        self.cashOutButton.alpha = 0.5;
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -126,15 +132,25 @@
     
     
     PFObject *transaction = self.transactions[indexPath.row];
-    NSString *currencyString = [NSNumberFormatter localizedStringFromNumber:(NSNumber *)[transaction objectForKey:@"amount"] numberStyle:NSNumberFormatterCurrencyStyle];
+    NSInteger integerValue = [[transaction objectForKey:@"amount"] integerValue];
+    NSNumber *value = @(integerValue / 100.0);
+    
+    NSString *currencyString = [NSNumberFormatter localizedStringFromNumber:value numberStyle:NSNumberFormatterCurrencyStyle];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
     [dateFormatter setDateFormat:@"M/d h:mma"];
+    
     NSString *dateString = [dateFormatter stringFromDate:transaction.createdAt];
     
     cell.leftLabel.text = [NSString stringWithFormat:@"%@ %@", dateString, [[transaction objectForKey:@"type"] uppercaseString]];
     cell.rightLabel.text = currencyString;
-    cell.rightLabel.textColor = [UIColor colorWithRed:0.805 green:0.026 blue:0.000 alpha:1.000];
+    
+    if (integerValue < 0) {
+        cell.rightLabel.textColor = RED;
+    } else {
+        cell.rightLabel.textColor = [UIColor blackColor];
+    }
     return cell;
 }
 
@@ -143,28 +159,14 @@
     [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:@"buy"];
 }
 
-- (void)buyChips:(NSNumber *)amount
-{
-    [SVProgressHUD show];
-    [PFCloud callFunctionInBackground:@"makeTransaction" withParameters:@{@"amount":amount,@"type":@"buy"} block:^(NSString *result, NSError *error) {
-        if (error) {
-            [SVProgressHUD showErrorWithStatus:error.userInfo[@"error"]];
-            NSLog(@"ERROR: %@ %@",error, result);
-            
-        } else {
-            [self updateBalance];
-            NSLog(@"RESULT: %@", result);
-        }
-    }];
-}
+
 
 - (void)cashOutTapped:(id)sender
 {
-    if ([self.balance floatValue] < 0) {
-        NSLog(@"Pay Debt");
-        [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:@"debt"];
-    }  else if ([self.balance floatValue] > 0) {
-        [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:@"cashout"];
+    if ([self.balance doubleValue] < 0) {
+        [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:SWPAY];
+    }  else if ([self.balance doubleValue] > 0) {
+        [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:SWCASHOUT];
     } else {
         NSLog(@"Zero Debt");
     }
@@ -172,76 +174,70 @@
 
 - (void)sellChipsTapped:(id)sender
 {
-    [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:@"sell"];
+    [self performSegueWithIdentifier:@"SWDashboardToPriceEntry" sender:SWSELL];
 }
 
 - (void)cashOut:(NSNumber *)amount
 {
-    [SVProgressHUD show];
-    [PFCloud callFunctionInBackground:@"makeTransaction" withParameters:@{@"amount":amount,@"type":@"cashout"} block:^(NSString *result, NSError *error) {
-        if (error) {
-            [SVProgressHUD showErrorWithStatus:error.userInfo[@"error"]];
-            NSLog(@"ERROR: %@ %@",error, result);
-            
-        } else {
-            [self updateBalance];
-            NSLog(@"RESULT: %@", result);
-        }
-    }];
+    [self makeTransaction:@"cashout" amount:amount];
+}
+
+- (void)buyChips:(NSNumber *)amount
+{
+    [self makeTransaction:@"buy" amount:amount];
 }
 
 - (void)sellChips:(NSNumber *)amount
 {
-    [SVProgressHUD show];
-    [PFCloud callFunctionInBackground:@"makeTransaction" withParameters:@{@"amount":amount,@"type":@"sell"} block:^(NSString *result, NSError *error) {
-        if (error) {
-            [SVProgressHUD showErrorWithStatus:error.userInfo[@"error"]];
-            NSLog(@"ERROR: %@ %@",error, result);
-            
-        } else {
-            [self updateBalance];
-            NSLog(@"RESULT: %@", result);
-        }
-    }];
+    [self makeTransaction:@"sell" amount:amount];
 }
 
 - (void)payDebt:(NSNumber *)amount
 {
+    [self makeTransaction:@"pay" amount:amount];
+}
+
+- (void)makeTransaction:(NSString *)type amount:(NSNumber *)amount
+{
     [SVProgressHUD show];
-    [PFCloud callFunctionInBackground:@"makeTransaction" withParameters:@{@"amount":amount,@"type":@"pay"} block:^(NSString *result, NSError *error) {
+    [PFCloud callFunctionInBackground:@"makeTransaction" withParameters:@{@"amount":amount,@"type":type} block:^(NSObject *result, NSError *error) {
         if (error) {
             [SVProgressHUD showErrorWithStatus:error.userInfo[@"error"]];
             NSLog(@"ERROR: %@ %@",error, result);
             
         } else {
-            [self updateBalance];
-            NSLog(@"RESULT: %@", result);
+            [SVProgressHUD dismiss];
+            if ([result isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *response = (NSDictionary *)result;
+                if (response[@"balance"] && response[@"transaction"]) {
+                    self.balance = response[@"balance"];
+                    self.transactions = [@[response[@"transaction"]] arrayByAddingObjectsFromArray:self.transactions];
+                    [self updateUI];
+                } else {
+                    [self updateBalanceAndTransactions];
+                }
+            }
         }
     }];
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"SWDashboardToPriceEntry"]) {
         NSString *type = (NSString *)sender;
         SWPriceEntryViewController *destinationController = segue.destinationViewController;
-        if ([type isEqualToString:@"buy"]) {
+        destinationController.type = type;
+        if ([type isEqualToString:SWBUY]) {
             destinationController.priceSelected = ^(NSNumber *number) { [self buyChips:number]; };
-            destinationController.buttonText = @"BUY CHIPS";
-        } else if ([type isEqualToString:@"sell"]) {
+        } else if ([type isEqualToString:SWSELL]) {
             destinationController.priceSelected = ^(NSNumber *number) { [self sellChips:number]; };
-            destinationController.buttonColor = GREEN;
-            destinationController.buttonText = @"SELL CHIPS";
-        } else if ([type isEqualToString:@"debt"]) {
-            [destinationController setPrice:@([self.balance doubleValue] * -1)];
+        } else if ([type isEqualToString:SWPAY]) {
+            [destinationController setPrice:@([self.balance integerValue] * -1.0)];
             destinationController.priceSelected = ^(NSNumber *number) { [self payDebt:number]; };
-            destinationController.buttonColor = RED;
-            destinationController.buttonText = @"PAY DEBT";
-        }  else if ([type isEqualToString:@"cashout"]) {
-            [destinationController setPrice:@([self.balance doubleValue])];
+        }  else if ([type isEqualToString:SWCASHOUT]) {
+            [destinationController setPrice:@([self.balance integerValue])];
             destinationController.priceSelected = ^(NSNumber *number) { [self cashOut:number]; };
-            destinationController.buttonColor = GREEN;
-            destinationController.buttonText = @"CASH OUT";
         }
     }
 }

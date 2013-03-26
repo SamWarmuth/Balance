@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "889C166D1700F6300054F58E"
-               BuildableName = "Balance.app"
-               BlueprintName = "Balance"
-               ReferencedContainer = "container:Balance.xcodeproj">
+               BuildableName = "balance.app"
+               BlueprintName = "balance"
+               ReferencedContainer = "container:balance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "889C166D1700F6300054F58E"
-            BuildableName = "Balance.app"
-            BlueprintName = "Balance"
-            ReferencedContainer = "container:Balance.xcodeproj">
+            BuildableName = "balance.app"
+            BlueprintName = "balance"
+            ReferencedContainer = "container:balance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "889C166D1700F6300054F58E"
-            BuildableName = "Balance.app"
-            BlueprintName = "Balance"
-            ReferencedContainer = "container:Balance.xcodeproj">
+            BuildableName = "balance.app"
+            BlueprintName = "balance"
+            ReferencedContainer = "container:balance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "889C166D1700F6300054F58E"
-            BuildableName = "Balance.app"
-            BlueprintName = "Balance"
-            ReferencedContainer = "container:Balance.xcodeproj">
+            BuildableName = "balance.app"
+            BlueprintName = "balance"
+            ReferencedContainer = "container:balance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

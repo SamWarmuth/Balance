@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BButton.h"
 
-@interface SWPriceEntryViewController : UIViewController
+@interface SWPriceEntryViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, copy) void (^priceSelected)(NSNumber *price);
 @property (nonatomic, strong) NSNumber *price;
-@property (nonatomic, strong) UIColor *buttonColor;
-@property (nonatomic, strong) NSString *buttonText;
+@property (nonatomic, strong) NSString *type;
 
 - (IBAction)buttonPressed:(id)sender;
 
